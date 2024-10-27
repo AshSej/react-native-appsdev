@@ -1,17 +1,21 @@
-import React, { useState, useRef } from 'react';
-import { View, StyleSheet, Animated, FlatList } from 'react-native';
-import BballLayout from '../basketball/BballLayout';
-import VballLayout from '../volleyball/VballLayout';
-import BadmintonLayout from '../badminton/BadmintonLayout';
-import BilliardLayout from '../billiard/BilliardLayout';
-import ExerciseLayout from '../exercise/ExerciseLayout';
+// components/dashboard/DashboardContent.js
+import React, { useRef } from 'react';
+import { View, StyleSheet, Animated } from 'react-native';
+import BballLayout from '../basketball/BballLayout'; // Ensure this path is correct
+import VballLayout from '../volleyball/VballLayout'; // Ensure this path is correct
+import BadmintonLayout from '../badminton/BadmintonLayout'; // Ensure this path is correct
+import BilliardLayout from '../billiard/BilliardLayout'; // Ensure this path is correct
+import ExerciseLayout from '../exercise/ExerciseLayout'; // Ensure this path is correct
+import AboutUs from '../AboutUs.js'; // Import the AboutUs component
 
+// Layouts array
 const layouts = [
   { id: 'Bball', component: <BballLayout /> },
   { id: 'Vball', component: <VballLayout /> },
   { id: 'Badminton', component: <BadmintonLayout /> },
   { id: 'Billiard', component: <BilliardLayout /> },
   { id: 'Exercise', component: <ExerciseLayout /> },
+  { id: 'AboutUs', component: <AboutUs /> }, // Include About Us component
 ];
 
 const DashboardContent = () => {
@@ -29,7 +33,6 @@ const DashboardContent = () => {
         data={layouts}
         horizontal
         pagingEnabled
-        bounce={false}
         showsHorizontalScrollIndicator={false}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
@@ -43,10 +46,10 @@ const DashboardContent = () => {
   );
 };
 
+// Styles
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#f5f5f5',
-  
   },
   itemContainer: {
     width: 360,

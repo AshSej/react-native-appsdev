@@ -1,3 +1,5 @@
+// Dashboard.js
+import React from 'react';
 import { View, Text } from 'react-native';
 import { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
